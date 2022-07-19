@@ -1,7 +1,7 @@
 import pool from "../index.js";
 
 async function createTable() {
-  const response = await pool.query(
+  await pool.query(
     `CREATE TABLE restuarants (
         id BIGSERIAL NOT NULL PRIMARY KEY,
         name VARCHAR(50) NOT NULL,
@@ -10,7 +10,7 @@ async function createTable() {
         );`
   );
 
-  console.log(response);
+  console.log("restuarants table created succesfully");
 }
 
 createTable();

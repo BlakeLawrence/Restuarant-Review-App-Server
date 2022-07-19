@@ -16,7 +16,7 @@ async function populateReviewsTable() {
       initialReviewsTable.rating,
     ]
   );
-  console.log(response);
+  console.log(response.rows[0]);
   console.log("Reviews Table populated succesfully");
 }
 

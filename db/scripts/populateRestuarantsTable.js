@@ -8,7 +8,7 @@ async function populateTable() {
     [initialTable.name, initialTable.location, initialTable.price_range]
   );
 
-  console.log(response);
+  console.log(response.rows[0]);
 }
 
 populateTable();
