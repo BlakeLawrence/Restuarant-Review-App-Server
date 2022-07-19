@@ -16,6 +16,8 @@ Clone both the front end (client) and back end (server) repositories to your com
 
 ```bash
  https://github.com/BlakeLawrence/Restuarant-Review-App-Client.git
+```
+```bash
  https://github.com/BlakeLawrence/Restuarant-Review-App-Server.git
 ```
 
