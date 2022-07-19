@@ -56,7 +56,10 @@ router.delete("/:id", async function (req, res) {
   res.status(204).json({
     success: true,
   });
-  console.log(`Succesfully deleted restuarant with id ${id}: ${result.rows}`);
+  console.log(result);
+  console.log(
+    `Succesfully deleted restuarant with id ${id}: ${result.rows[0].name}`
+  );
 });
 
 export default router;
