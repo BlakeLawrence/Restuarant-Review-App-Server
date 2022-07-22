@@ -13,6 +13,14 @@ export async function getIndividualRestuarant(id) {
   ]);
   return result;
 }
+// Get individual Review
+export async function getIndividualReview(id) {
+  const result = await pool.query(
+    "SELECT * FROM reviews WHERE restuarant_id = $1;",
+    [id]
+  );
+  return result;
+}
 
 // Add restuarant
 export async function addRestuarant(body) {

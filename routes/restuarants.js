@@ -6,6 +6,7 @@ import {
   getAllRestuarants,
   getIndividualRestuarant,
   updateRestuarant,
+  getIndividualReview,
 } from "../models/restuarants.js";
 const router = express.Router();
 
@@ -24,8 +25,12 @@ router.get("/", async function (req, res) {
 //GET individual restuarant
 router.get("/:id", async function (req, res) {
   const id = Number(req.params.id);
-  const result = await getIndividualRestuarant(id);
-  res.status(200).json({ sucess: true, payload: result.rows });
+  const restuarant = await getIndividualRestuarant(id);
+  const reviews = await getIndividualReview(id);
+  res.status(200).json({
+    sucess: true,
+    payload: { restuarant: restuarant.rows, reviews: reviews.rows },
+  });
 });
 
 // CREATE/POST restuarant
