@@ -7,6 +7,7 @@ import {
   getIndividualRestuarant,
   updateRestuarant,
   getIndividualReview,
+  addReview,
 } from "../models/restuarants.js";
 const router = express.Router();
 
@@ -66,6 +67,18 @@ router.delete("/:id", async function (req, res) {
   console.log(
     `Succesfully deleted restuarant with id ${id}: ${result.rows[0].name}`
   );
+});
+
+// Post a review
+router.post("/:id/addReview", async function (req, res) {
+  const id = req.params.id;
+  const body = req.body;
+  console.log(id);
+  console.log(body);
+  const result = await addReview(id, body);
+  console.log(`New review Added successfully`);
+  console.log(result.rows[0]);
+  res.status(201).json({ success: true, payload: result.rows });
 });
 
 export default router;

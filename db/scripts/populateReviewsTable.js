@@ -4,15 +4,26 @@ let initialReviewsTable = [
   {
     restuarant_id: 1,
     name: "Blake",
-    review:
-      "Excellent Service, great tasting food and a warm welcoming atmosphere",
-    rating: 5,
+    review: "Cheap and cheerful",
+    rating: 3,
   },
   {
-    restuarant_id: 1,
+    restuarant_id: 2,
     name: "Helen",
-    review: "really good food",
+    review: "Not too bad",
+    rating: 3,
+  },
+  {
+    restuarant_id: 3,
+    name: "Isaac",
+    review: "really good food, amazing service (a little expensive though)",
     rating: 4,
+  },
+  {
+    restuarant_id: 4,
+    name: "Jill",
+    review: "That cheese pull though 🧀🥰",
+    rating: 5,
   },
 ];
 

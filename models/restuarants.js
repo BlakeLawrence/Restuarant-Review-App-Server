@@ -47,3 +47,12 @@ export async function deleteRestuarant(id) {
   );
   return result;
 }
+
+// Add a review
+export async function addReview(id, body) {
+  const result = await pool.query(
+    "INSERT INTO reviews (restuarant_id, name, review, rating) VALUES ($1, $2, $3, $4) RETURNING *;",
+    [id, body.name, body.review, body.rating]
+  );
+  return result;
+}
