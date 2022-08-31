@@ -39,7 +39,7 @@ router.post("/", async function (req, res) {
   const body = req.body;
   const result = await addRestuarant(body);
   console.log(
-    `New restuarant "${result.rows[0].name}", location "${result.rows[0].location}" Created successfully`
+    `New restuarant "${result.rows[0].name}", location "${result.rows[0].location}" Created successfully :)`
   );
   console.log(result.rows);
   res.status(201).json({ success: true, payload: result.rows });
