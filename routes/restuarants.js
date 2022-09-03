@@ -12,7 +12,8 @@ import {
 const router = express.Router();
 
 // GET all restuarants
-router.get("/", async function (req, res) {
+router.get("/", async function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
   const result = await getAllRestuarants();
   res.status(200).json({
     status: "success",
@@ -24,7 +25,8 @@ router.get("/", async function (req, res) {
 });
 
 //GET individual restuarant
-router.get("/:id", async function (req, res) {
+router.get("/:id", async function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
   const id = Number(req.params.id);
   const restuarant = await getIndividualRestuarant(id);
   const reviews = await getIndividualReview(id);
@@ -35,7 +37,8 @@ router.get("/:id", async function (req, res) {
 });
 
 // CREATE/POST restuarant
-router.post("/", async function (req, res) {
+router.post("/", async function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
   const body = req.body;
   const result = await addRestuarant(body);
   console.log(
@@ -46,7 +49,8 @@ router.post("/", async function (req, res) {
 });
 
 // UPDATE restuarant
-router.put("/:id", async function (req, res) {
+router.put("/:id", async function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
   const id = Number(req.params.id);
   const body = req.body;
   const result = await updateRestuarant(id, body);
@@ -56,7 +60,8 @@ router.put("/:id", async function (req, res) {
 });
 
 // DELETE a restuarant by id
-router.delete("/:id", async function (req, res) {
+router.delete("/:id", async function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
   const id = Number(req.params.id);
   console.log(id);
   const result = await deleteRestuarant(id);
@@ -70,7 +75,8 @@ router.delete("/:id", async function (req, res) {
 });
 
 // Post a review
-router.post("/:id/addReview", async function (req, res) {
+router.post("/:id/addReview", async function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
   const id = req.params.id;
   const body = req.body;
   console.log(id);
