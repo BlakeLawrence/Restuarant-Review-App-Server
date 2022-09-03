@@ -6,7 +6,7 @@ import restuarantsRouter from "./routes/restuarants.js";
 const app = express();
 
 //middleware to unpackage json body
-app.use(cors({ origin: "https://restuarant-reviews.netlify.app" }));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 app.use("/api/v1/restuarants", restuarantsRouter);
