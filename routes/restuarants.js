@@ -22,6 +22,7 @@ router.get("/", async function (req, res, next) {
       restuarants: result.rows,
     },
   });
+  next();
 });
 
 //GET individual restuarant
@@ -34,6 +35,7 @@ router.get("/:id", async function (req, res, next) {
     sucess: true,
     payload: { restuarant: restuarant.rows, reviews: reviews.rows },
   });
+  next();
 });
 
 // CREATE/POST restuarant
@@ -46,6 +48,7 @@ router.post("/", async function (req, res, next) {
   );
   console.log(result.rows);
   res.status(201).json({ success: true, payload: result.rows });
+  next();
 });
 
 // UPDATE restuarant
@@ -57,6 +60,7 @@ router.put("/:id", async function (req, res, next) {
   console.log(`Updated restuarant Successfully to:`);
   res.status(200).json({ sucess: true, payload: result.rows });
   console.log(result.rows);
+  next();
 });
 
 // DELETE a restuarant by id
@@ -72,6 +76,7 @@ router.delete("/:id", async function (req, res, next) {
   console.log(
     `Succesfully deleted restuarant with id ${id}: ${result.rows[0].name}`
   );
+  next();
 });
 
 // Post a review
@@ -85,6 +90,7 @@ router.post("/:id/addReview", async function (req, res, next) {
   console.log(`New review Added successfully`);
   console.log(result.rows[0]);
   res.status(201).json({ success: true, payload: result.rows });
+  next();
 });
 
 export default router;
