@@ -12,7 +12,7 @@ app.use(express.json());
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://restuarant-reviews.netlify.app/"
+    "https://yelp-clone-blake.herokuapp.com"
   );
   res.header(
     "Access-Control-Allow-Headers",
